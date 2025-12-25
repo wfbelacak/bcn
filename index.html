@@ -25,16 +25,22 @@
   let pesanwhatsapp = "";
 
   function menuju() {
-    var nomor = "+6283130456470";
+    // Pastikan nomor menggunakan kode negara tanpa tanda + (sudah benar 62xxx)
+    var nomor = "6283822742118";
     
     // Jika user belum klik tombol Mau/Gamau tapi maksa klik Balas
     if (pesanwhatsapp === "") {
         pesanwhatsapp = "Halo sayang! Aku sudah lihat pesannya.";
     }
     
+    // Encode pesan agar karakter khusus (spasi, emoji) terbaca sistem
     var pesan = encodeURIComponent(pesanwhatsapp);
-    // Redirect ke WhatsApp
-    window.location.href = "https://api.whatsapp.com/send?phone=" + nomor + "&text=" + pesan;
+    
+    // Gunakan format wa.me agar langsung menuju ke chat nomor tersebut
+    var linkWA = "https://wa.me/" + nomor + "?text=" + pesan;
+    
+    // Membuka link di tab baru atau redirect langsung
+    window.location.href = linkWA;
   }
 </script>
 
@@ -122,4 +128,5 @@ const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src)
 <script src="https://feeldreams.github.io/lihatya/script2.js"></script>
 </body>
 </html>
+
 
