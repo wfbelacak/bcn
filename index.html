@@ -21,26 +21,30 @@
 </head>
 
 <script>
+  // Variabel Global untuk menyimpan isi pesan
   let pesanwhatsapp = "";
 
   function menuju() {
     var nomor = "6283822742118";
+    
+    // Jika user belum klik tombol Mau/Gamau tapi maksa klik Balas
     if (pesanwhatsapp === "") {
-        pesanwhatsapp = "IYA AA SAYANGG😘😘😘";
+        pesanwhatsapp = "Halo sayang! Aku sudah lihat pesannya.";
     }
+    
     var pesan = encodeURIComponent(pesanwhatsapp);
-    window.location.href = "https://wa.me/" + nomor + "?text=" + pesan;
+    // Redirect ke WhatsApp
+    window.location.href = "https://api.whatsapp.com/send?phone=" + nomor + "&text=" + pesan;
   }
 </script>
-	
+
+<body>
    <div class="overlay">
      <div class="loading-message">Hai ACAAA!<br>Tunggu dulu ya..</div>
    </div>
    
-   <!-- Audio MP3 -->
    <audio src="music.mp3" id="linkmp3" class="sembunyi"></audio>
    
-   <!-- Halaman Pertama -->
    <section class="first" onclick="playaud()">
        <div class="wp"><img id="imgsatu" src="https://feeldreams.github.io/pics/awan/1.jpg"/></div>
        <img id="first_stiker" class="stiker fade-in" src="https://feeldreams.github.io/bunga.gif"/>
@@ -49,7 +53,6 @@
        <p class="slide-up"><i>Scroll kebawah lagi yaa hhe😁</i></p>
   </section>
   
-  <!-- Halaman Kedua -->
   <section>
       <div class="wp"><img id="imgtiga" src="https://feeldreams.github.io/pics/awan/3.jpg"/></div>
       <img class="stiker fade-in" src="https://feeldreams.github.io/pusn.gif"/>
@@ -57,16 +60,14 @@
       <p id="teksnimasisatu">Kalau minyak itu Bimoli, kalau aca itu BE MY ONLY. hhe😂</p>
   </section>
   
-  <!-- Halaman Ketiga -->
   <section>
       <div class="wp"><img id="imgdua" src="https://feeldreams.github.io/pics/awan/2.jpg"/></div>
       <img class="stiker fade-in" src="https://feeldreams.github.io/cilukba.gif"/>
       <h3 class="title">Aku ada pantun nih buat aca hehe😁</h3>
   </section>
   
-  <!-- Halaman Keempat -->
   <section>
-  	<div class="wp"><img id="imglima" src="https://feeldreams.github.io/pics/awan/3.jpg"/></div>
+    <div class="wp"><img id="imglima" src="https://feeldreams.github.io/pics/awan/3.jpg"/></div>
       <img id="stikersatu" class="stiker fade-in" src="1.gif"/>
       <img id="stikerdua" src="2.gif"/>
       <h3 id="teksnimasi">Pak kumis bawa paku, aca manis mau ga aca jadi bidadari ku?? hhe😅</h3>
@@ -76,9 +77,8 @@
      </div>
   </section>
   
-  <!-- Halaman Terakhir -->
   <section id="iniakhir">
-  	<div class="wp" id="wpakhir"><img src="https://feeldreams.github.io/pics/awan/6.jpg"/></div>
+    <div class="wp" id="wpakhir"><img src="https://feeldreams.github.io/pics/awan/6.jpg"/></div>
       <img id="stikerakhir" class="stiker fade-in" src="https://feeldreams.github.io/cilukba.gif"/>
       <img id="stikerakhir2" style="display:none" src="https://feeldreams.github.io/emawh.gif"/>
       <h1 id="judulakhir"></h1><p id="kalimatakhir"></p><p id="palingakhir"></p>
@@ -87,14 +87,12 @@
      </div>
   </section>
   
-  <!-- Tombol Next Halaman -->
   <div id="initom" class="menu">
   <a class='tombol' onclick="tes()">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/> </svg>
   </a>
   </div>
 
-<!-- Edit Teks Akhir di bawah ini -->
 <script>
 const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);initom.style="opacity:0;bottom:0;transition:none";
 
@@ -103,8 +101,10 @@ const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src)
     teksjudulakhir = "Yey makasih yaa🥳";
     tekskalimatakhir = "Oh iya satu lagi, Tau ga persamaan kamu sama apotek tutup?<br><br>Sama-sama ga ada obat~JIAKHH😂🥰";
     teksmunculakhir = "I LOVE YOU";
-    tekspalingakhir = "Yaudah jangan lupa chat di timo yaa hihi (lewat tombol di bawah hhe";
-    pesanwhatsapp = "LOVE YOU AA SAYANGG 😘😘";
+    tekspalingakhir = "Jangan lupa chat aku yaa hihi";
+    
+    // Pesan yang akan dikirim jika klik "Mau"
+    pesanwhatsapp = "IYA AA SAYANGG, AKU MAU JADI BIDADARI KAMU😘😘😘";
   }
 
   document.getElementById('Bn').onclick = function() {
@@ -112,8 +112,10 @@ const body = document.querySelector("body"); audio = new Audio('' + linkmp3.src)
     teksjudulakhir = "YAHH😁";
     tekskalimatakhir = "Yaudah kalau ga mau, lain kali harus mau yaa";
     teksmunculakhir = "Canda deng <br><br> Serius juga gapapa deng😂";
-    tekspalingakhir = "Yaudah jangan lupa chat di timo yaa hihi (lewat tombol di bawah hhe)";
-    pesanwhatsapp = "iyaa";
+    tekspalingakhir = "Yaudah jangan lupa chat aku yaa hihi (lewat tombol di bawah hhe)";
+    
+    // Pesan yang akan dikirim jika klik "Gamau"
+    pesanwhatsapp = "Yah maaf yaa, aku belum bisa jadi bidadari kamu hhe";
   }
 </script>
 
